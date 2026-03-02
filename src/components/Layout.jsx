@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Outlet } from 'react-router-dom';
 
-function Layout({ children, toggleTheme, theme }) {
+function Layout({ toggleTheme, theme }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
@@ -36,9 +36,11 @@ function Layout({ children, toggleTheme, theme }) {
         }}
       >
         {isHomePage ? (
-          children
+          <Outlet />
         ) : (
-          <div className="pageContainer">{children}</div>
+          <div className="pageContainer">
+            <Outlet />
+          </div>
         )}
       </main>
 

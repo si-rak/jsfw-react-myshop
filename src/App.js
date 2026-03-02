@@ -19,20 +19,20 @@ function App() {
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
 
   return (
     <Router>
-      <Layout toggleTheme={toggleTheme} theme={theme}>
-        <Routes>
+      <Routes>
+        <Route element={<Layout toggleTheme={toggleTheme} theme={theme} />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/product/:id" element={<ProductPage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/checkout-success" element={<CheckoutSuccessPage />} />
-        </Routes>
-      </Layout>
+        </Route>
+      </Routes>
     </Router>
   );
 }
