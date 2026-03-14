@@ -7,17 +7,28 @@ function HomePage() {
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState('');
   const [filterDiscounted, setFilterDiscounted] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     async function fetchProducts() {
       try {
         const response = await fetch('https://v2.api.noroff.dev/online-shop');
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch products');
+        }
+
         const json = await response.json();
         setProducts(json.data);
       } catch (error) {
         console.error('Error fetching products:', error);
+        setError('Unable to load products. Please try again later.');
+      } finally {
+        setLoading(false);
       }
     }
+
     fetchProducts();
   }, []);
 
@@ -33,6 +44,14 @@ function HomePage() {
 
     return matchesName && matchesDiscount;
   });
+
+  if (loading) {
+    return <p>Loading products...</p>;
+  }
+
+  if (error) {
+    return <p>{error}</p>;
+  }
 
   return (
     <div className={styles.container}>
