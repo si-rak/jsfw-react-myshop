@@ -8,7 +8,10 @@ function CartPage() {
   const { cartItems, clearCart, removeItem } = useContext(CartContext);
   const navigate = useNavigate();
 
-  const total = cartItems.reduce((sum, item) => sum + item.discountedPrice, 0);
+  const total = cartItems.reduce(
+    (sum, item) => sum + item.discountedPrice * (item.quantity || 1),
+    0,
+  );
 
   function handleCheckout() {
     clearCart();
@@ -18,10 +21,12 @@ function CartPage() {
   return (
     <div className={`pageContainer ${styles.container}`}>
       <h2>Your Cart</h2>
+
       {cartItems.length === 0 ? (
         <div className={styles.emptyCart}>
           <div className={styles.icon}>🛒</div>
           <p>Looks like you haven’t added anything yet.</p>
+
           <Link
             to="/"
             className={`${btnStyles.button} ${btnStyles.greenButton}`}
@@ -32,24 +37,23 @@ function CartPage() {
       ) : (
         <div>
           <ul>
-            {cartItems.map((item, index) => (
-              <li
-                key={index}
-                className={`${styles.cartItem} ${
-                  cartItems.length === 1 ? styles.singleItem : ''
-                }`}
-              >
+            {cartItems.map((item) => (
+              <li key={item.id} className={styles.cartItem}>
                 <img
                   src={item.image?.url}
                   alt={item.image?.alt || item.title}
                 />
+
                 <div className={styles.info}>
                   <strong>{item.title}</strong>
                   <span>${item.discountedPrice}</span>
+
+                  <span>Qty: {item.quantity || 1}</span>
                 </div>
+
                 <button
                   className={styles.removeBtn}
-                  onClick={() => removeItem(index)}
+                  onClick={() => removeItem(item.id)}
                 >
                   Remove
                 </button>
@@ -66,6 +70,7 @@ function CartPage() {
             >
               Checkout
             </button>
+
             <button
               className={`${btnStyles.button} ${btnStyles.dangerButton}`}
               onClick={clearCart}
