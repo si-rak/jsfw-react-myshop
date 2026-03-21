@@ -9,19 +9,35 @@ function ContactPage() {
     message: '',
   });
 
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(null);
+
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    setError(null);
+    setSuccess(false);
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    alert('Message sent!');
+
+    // simple email validation
+    if (!formData.email.includes('@')) {
+      setError('Please enter a valid email address.');
+      return;
+    }
+
+    setSuccess(true);
     setFormData({ name: '', email: '', message: '' });
   }
 
   return (
     <div className={`pageContainer ${styles.container}`}>
       <h2>Contact Us</h2>
+
+      {success && <p className={styles.success}>Message sent successfully!</p>}
+      {error && <p className={styles.error}>{error}</p>}
+
       <form onSubmit={handleSubmit} className={styles.form}>
         <input
           type="text"
@@ -31,6 +47,7 @@ function ContactPage() {
           onChange={handleChange}
           required
         />
+
         <input
           type="email"
           name="email"
@@ -39,6 +56,7 @@ function ContactPage() {
           onChange={handleChange}
           required
         />
+
         <textarea
           name="message"
           placeholder="Your Message"
