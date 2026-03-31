@@ -174,7 +174,7 @@ Frontend Developer (Student @ Noroff)
 
 ## 🙏 Acknowledgements
 
-- **Noroff School of Technology** – Project brief and API
+- Noroff School of Technology – Project brief and API
 - Frontend Development instructors and mentors
 - UI inspiration from YouTube resources
 - Learning support and debugging assistance using ChatGPT
