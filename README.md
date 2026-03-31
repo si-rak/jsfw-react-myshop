@@ -8,7 +8,7 @@
   <a href="https://react.dev/">
     <img src="https://img.shields.io/badge/React-19.1.0-61DAFB?style=for-the-badge&logo=react&logoColor=white" alt="React Badge" />
   </a>
-  <a href="https://sirakshop.netlify.app">
+  <a href="https://jsfw-react-myshop.netlify.app/">
     <img src="https://img.shields.io/badge/Deployed_on-Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="Netlify Badge" />
   </a>
   <a href="https://nodejs.org/">
@@ -22,22 +22,37 @@
   </a>
 </p>
 
-A modern, responsive **eCommerce frontend** built with **React**, designed to simulate a real shopping experience using the **Noroff Online Shop API**.  
-This project was created as part of the _JavaScript Frameworks_ course in the **Frontend Development program at Noroff**, focusing on reusable components, responsive UI, and clean architecture.
+A modern, responsive **eCommerce frontend application** built with **React**, simulating a real online shopping experience using the **Noroff Online Shop API**.
+
+This project demonstrates **component-based architecture**, **state management with Context API**, and **robust API handling** including loading and error states.
+
+---
+
+## 🚀 Live Demo
+
+[🟢 View Live Site](https://jsfw-react-myshop.netlify.app/)
+
+## 💻 GitHub Repository
+
+[📂 View GitHub Repository](https://github.com/si-rak/jsfw-react-myshop.git)
 
 ---
 
 ## ✨ Features
 
-- 🛒 Product listing with live API fetch
-- 🔍 Search and discount filter
-- 📄 Product detail pages
-- ➕ Add to cart and manage cart items
-- 💳 Checkout confirmation page with confetti animation
-- 📬 Contact form with input validation
-- 📱 Fully responsive (mobile, tablet, desktop)
-- 🧩 Modular components and context-based state management
-- 🧪 Basic Jest testing for utility logic
+- 🛒 Product listing with live API integration
+- 🔍 Search functionality with real-time filtering
+- 🏷️ Discount filtering system
+- 📄 Dynamic product detail pages (React Router)
+- ➕ Add to cart, remove items, and clear cart
+- 🧮 Cart total calculation with scalable logic
+- 💳 Checkout flow with success confirmation
+- 🎉 Confetti animation on successful checkout
+- 📬 Contact form with validation and user feedback
+- ⏳ Loading states and ❌ error handling for API requests
+- 📱 Fully responsive design (mobile, tablet, desktop)
+- 🧩 Modular component structure and reusable UI
+- 🧠 Global state management using Context API
 
 ---
 
@@ -65,9 +80,8 @@ This project was created as part of the _JavaScript Frameworks_ course in the **
 ## 🧰 Tech Stack
 
 - **React** (Hooks & Context API)
-- **React Router DOM v7**
+- **React Router DOM**
 - **CSS Modules**
-- **Font Awesome**
 - **Noroff API**
 - **React Confetti**
 - **Jest** (for utility testing)
@@ -100,49 +114,51 @@ screenshots/             # README images
 Clone the repository and set up the project locally with the following commands:
 
 ```bash
-# Clone the repository
+# Clone repository
 git clone https://github.com/si-rak/jsfw-react-myshop.git
 
-# Navigate to the project folder
-cd jsfw
+# Navigate into project
+cd jsfw-react-myshop
 
 # Install dependencies
 npm install
 
-# Start the local development server
+# Run development server
 npm start
 
 ```
 
-Requires Node.js v20 (LTS recommended)
-Tested successfully on Node v20 and npm 10+
+## Requirements:
+
+- Node.js v20+
+- npm v10+
 
 ---
 
 ## 🧪 Usage
 
-1. Visit `/` to browse products
-2. Use the search bar or toggle “Show Discounted Products”
-3. Add items to your cart and view totals
-4. Checkout to see the confetti success screen 🎉
-5. Send messages via the contact form (includes validation)
+1. Browse products on the homepage
+2. Use search or filter discounted products
+3. View product details
+4. Add/remove items in cart
+5. Proceed to checkout
+6. Submit contact form (with validation)
 
 ---
 
 ## 🔮 Future Improvements
 
-- 💳 Integrate Stripe or PayPal checkout
-- 🔐 Add user login & authentication
-- ⭐ Include product ratings & reviews
-- ⚙️ Improve error handling & loading states
-- 🧪 Extend Jest test coverage
+- 💳 Payment integration (Stripe / PayPal)
+- 🔐 User authentication system
+- ⭐ Product reviews and ratings
+- 🧪 Expanded test coverage
 
 ---
 
 ## 👤 Author
 
 **Sirak Getachew**  
-Frontend Developer Student @ Noroff
+Frontend Developer (Student @ Noroff)
 
 - 🧑‍💻 [GitHub](https://github.com/si-rak)
 - 💼 [LinkedIn](https://www.linkedin.com/in/sirak-getachew-583747240/)
@@ -152,24 +168,15 @@ Frontend Developer Student @ Noroff
 
 ## 📄 License
 
-This project is licensed under the [MIT License](LICENSE).  
-© 2025 Sirak Getachew. All rights reserved.
+[MIT License](LICENSE) © 2025 Sirak Getachew
 
 ---
 
 ## 🙏 Acknowledgements
 
-Thanks to **Noroff School of Technology** and the **Frontend Development staff** for their guidance and support.  
-Special thanks to **Martin** for valuable mentorship and feedback.  
-UI inspiration from [this YouTube video](https://youtu.be/054qYbsxyXw?si=4MmrgCzNIloRdTVV).  
-Some refinements were made with help from **ChatGPT**, used for learning and troubleshooting.
+- **Noroff School of Technology** – Project brief and API
+- Frontend Development instructors and mentors
+- UI inspiration from YouTube resources
+- Learning support and debugging assistance using ChatGPT
 
 ---
-
-## 🌐 Live Demo
-
-[🟢 View Site on Netlify](https://jsfw-react-myshop.netlify.app/)
-
-## 💻 GitHub Repository
-
-[📂 View Source Code on GitHub](https://github.com/si-rak/jsfw-react-myshop.git)

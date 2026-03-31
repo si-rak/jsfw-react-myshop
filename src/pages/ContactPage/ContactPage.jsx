@@ -16,7 +16,7 @@ function ContactPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     setError(null);
     setSuccess(false);
-  }
+  } 
 
   function handleSubmit(e) {
     e.preventDefault();
